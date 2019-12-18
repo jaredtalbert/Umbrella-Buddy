@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,9 @@
 		4D82CE2E23A8B4EE004D29D2 /* Umbrella_Buddy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D82CE2C23A8B4EE004D29D2 /* Umbrella_Buddy.xcdatamodeld */; };
 		4D82CE3023A8B4F1004D29D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D82CE2F23A8B4F1004D29D2 /* Assets.xcassets */; };
 		4D82CE3323A8B4F1004D29D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D82CE3123A8B4F1004D29D2 /* LaunchScreen.storyboard */; };
+		4D82CE3D23A8B835004D29D2 /* Constants.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D82CE3C23A8B835004D29D2 /* Constants.plist */; };
+		4D82CE3F23A9D189004D29D2 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D82CE3E23A9D189004D29D2 /* WeatherDataModel.swift */; };
+		6B82C06482837FAE828CA860 /* Pods_Umbrella_Buddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CBF7BB646C9E06B8F3184CA /* Pods_Umbrella_Buddy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,11 @@
 		4D82CE2F23A8B4F1004D29D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D82CE3223A8B4F1004D29D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D82CE3423A8B4F1004D29D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D82CE3C23A8B835004D29D2 /* Constants.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Constants.plist; sourceTree = "<group>"; };
+		4D82CE3E23A9D189004D29D2 /* WeatherDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
+		7CBF7BB646C9E06B8F3184CA /* Pods_Umbrella_Buddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Umbrella_Buddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88CF4B35FDBFEB62E92FC6EB /* Pods-Umbrella Buddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umbrella Buddy.debug.xcconfig"; path = "Target Support Files/Pods-Umbrella Buddy/Pods-Umbrella Buddy.debug.xcconfig"; sourceTree = "<group>"; };
+		CF4760D5E104D9ABABF14C20 /* Pods-Umbrella Buddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umbrella Buddy.release.xcconfig"; path = "Target Support Files/Pods-Umbrella Buddy/Pods-Umbrella Buddy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B82C06482837FAE828CA860 /* Pods_Umbrella_Buddy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +53,8 @@
 			children = (
 				4D82CE2223A8B4EE004D29D2 /* Umbrella Buddy */,
 				4D82CE2123A8B4EE004D29D2 /* Products */,
+				AA14EF868E3EA0DAD183A5C0 /* Pods */,
+				BCD437C1B25A30D5EA86CCEB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +69,7 @@
 		4D82CE2223A8B4EE004D29D2 /* Umbrella Buddy */ = {
 			isa = PBXGroup;
 			children = (
+				4D82CE3E23A9D189004D29D2 /* WeatherDataModel.swift */,
 				4D82CE2323A8B4EE004D29D2 /* AppDelegate.swift */,
 				4D82CE2523A8B4EE004D29D2 /* SceneDelegate.swift */,
 				4D82CE2723A8B4EE004D29D2 /* ViewController.swift */,
@@ -66,8 +78,26 @@
 				4D82CE3123A8B4F1004D29D2 /* LaunchScreen.storyboard */,
 				4D82CE3423A8B4F1004D29D2 /* Info.plist */,
 				4D82CE2C23A8B4EE004D29D2 /* Umbrella_Buddy.xcdatamodeld */,
+				4D82CE3C23A8B835004D29D2 /* Constants.plist */,
 			);
 			path = "Umbrella Buddy";
+			sourceTree = "<group>";
+		};
+		AA14EF868E3EA0DAD183A5C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				88CF4B35FDBFEB62E92FC6EB /* Pods-Umbrella Buddy.debug.xcconfig */,
+				CF4760D5E104D9ABABF14C20 /* Pods-Umbrella Buddy.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BCD437C1B25A30D5EA86CCEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CBF7BB646C9E06B8F3184CA /* Pods_Umbrella_Buddy.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D82CE3723A8B4F1004D29D2 /* Build configuration list for PBXNativeTarget "Umbrella Buddy" */;
 			buildPhases = (
+				07BB939D7949643D08480800 /* [CP] Check Pods Manifest.lock */,
 				4D82CE1C23A8B4EE004D29D2 /* Sources */,
 				4D82CE1D23A8B4EE004D29D2 /* Frameworks */,
 				4D82CE1E23A8B4EE004D29D2 /* Resources */,
+				15D01211E38541C2758A5C57 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,11 +162,54 @@
 			files = (
 				4D82CE3323A8B4F1004D29D2 /* LaunchScreen.storyboard in Resources */,
 				4D82CE3023A8B4F1004D29D2 /* Assets.xcassets in Resources */,
+				4D82CE3D23A8B835004D29D2 /* Constants.plist in Resources */,
 				4D82CE2B23A8B4EE004D29D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07BB939D7949643D08480800 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Umbrella Buddy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		15D01211E38541C2758A5C57 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Umbrella Buddy/Pods-Umbrella Buddy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Umbrella Buddy/Pods-Umbrella Buddy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Umbrella Buddy/Pods-Umbrella Buddy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4D82CE1C23A8B4EE004D29D2 /* Sources */ = {
@@ -142,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D82CE2823A8B4EE004D29D2 /* ViewController.swift in Sources */,
+				4D82CE3F23A9D189004D29D2 /* WeatherDataModel.swift in Sources */,
 				4D82CE2423A8B4EE004D29D2 /* AppDelegate.swift in Sources */,
 				4D82CE2E23A8B4EE004D29D2 /* Umbrella_Buddy.xcdatamodeld in Sources */,
 				4D82CE2623A8B4EE004D29D2 /* SceneDelegate.swift in Sources */,
@@ -286,6 +362,7 @@
 		};
 		4D82CE3823A8B4F1004D29D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88CF4B35FDBFEB62E92FC6EB /* Pods-Umbrella Buddy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +381,7 @@
 		};
 		4D82CE3923A8B4F1004D29D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF4760D5E104D9ABABF14C20 /* Pods-Umbrella Buddy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

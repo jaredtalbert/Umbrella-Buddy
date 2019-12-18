@@ -2,13 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>SchemeUserState</key>
-	<dict>
-		<key>Umbrella Buddy.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
-	</dict>
+	<key>url</key>
+	<string>api.openweathermap.org/data/2.5/weather?q=</string>
+	<key>app_id</key>
+	<string>c47460de6ec07691f888b3f46c96bc4a</string>
 </dict>
 </plist>
