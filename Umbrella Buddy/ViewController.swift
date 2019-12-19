@@ -17,15 +17,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var needUmbrellaLabel: UILabel!
     
+    let constants = Constants()
+    
     
     let weather_url = "https://api.openweathermap.org/data/2.5/weather"
-    let app_id = "your id here" 
+    let app_id = "c47460de6ec07691f888b3f46c96bc4a"
     
     let locationManager = CLLocationManager()
     let weatherDataModel = WeatherDataModel()
+    let weatherVocalization = WeatherVocalization()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
@@ -80,10 +85,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         cityNameLabel.text = "\(weatherDataModel.city)"
         
         if (weatherDataModel.umbrellaNeeded) {
-            needUmbrellaLabel.text = "You're probably going to need an umbrella today."
+//            needUmbrellaLabel.text = "You're probably going to need an umbrella today."
+            needUmbrellaLabel.text = weatherVocalization.giveVocalization(isUmbrellaNeeded: true)
         } else {
-            needUmbrellaLabel.text = "It doesn't look like you need an umbrella."
+//            needUmbrellaLabel.text = "It doesn't look like you need an umbrella."
+            needUmbrellaLabel.text = weatherVocalization.giveVocalization(isUmbrellaNeeded: false)
         }
+        
+        print("DEBUG - UI Updated")
         
     }
     

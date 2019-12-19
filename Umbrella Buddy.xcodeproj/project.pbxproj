@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D55327623A9E2D80039D3BD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D55327523A9E2D80039D3BD /* Constants.swift */; };
+		4D73CC3223AB664700798997 /* WeatherVocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D73CC3123AB664700798997 /* WeatherVocalization.swift */; };
 		4D82CE2423A8B4EE004D29D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D82CE2323A8B4EE004D29D2 /* AppDelegate.swift */; };
 		4D82CE2623A8B4EE004D29D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D82CE2523A8B4EE004D29D2 /* SceneDelegate.swift */; };
 		4D82CE2823A8B4EE004D29D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D82CE2723A8B4EE004D29D2 /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D55327523A9E2D80039D3BD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4D73CC3123AB664700798997 /* WeatherVocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVocalization.swift; sourceTree = "<group>"; };
 		4D82CE2023A8B4EE004D29D2 /* Umbrella Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Umbrella Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D82CE2323A8B4EE004D29D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D82CE2523A8B4EE004D29D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 				4D82CE3423A8B4F1004D29D2 /* Info.plist */,
 				4D82CE2C23A8B4EE004D29D2 /* Umbrella_Buddy.xcdatamodeld */,
 				4D82CE3C23A8B835004D29D2 /* Constants.plist */,
+				4D55327523A9E2D80039D3BD /* Constants.swift */,
+				4D73CC3123AB664700798997 /* WeatherVocalization.swift */,
 			);
 			path = "Umbrella Buddy";
 			sourceTree = "<group>";
@@ -221,6 +227,8 @@
 				4D82CE2423A8B4EE004D29D2 /* AppDelegate.swift in Sources */,
 				4D82CE2E23A8B4EE004D29D2 /* Umbrella_Buddy.xcdatamodeld in Sources */,
 				4D82CE2623A8B4EE004D29D2 /* SceneDelegate.swift in Sources */,
+				4D73CC3223AB664700798997 /* WeatherVocalization.swift in Sources */,
+				4D55327623A9E2D80039D3BD /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
