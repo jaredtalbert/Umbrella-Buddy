@@ -118,6 +118,7 @@
 				4D82CE1D23A8B4EE004D29D2 /* Frameworks */,
 				4D82CE1E23A8B4EE004D29D2 /* Resources */,
 				15D01211E38541C2758A5C57 /* [CP] Embed Pods Frameworks */,
+				5ADFCD9519E81FD25FF3CEBC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,6 +214,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Umbrella Buddy/Pods-Umbrella Buddy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5ADFCD9519E81FD25FF3CEBC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Umbrella Buddy/Pods-Umbrella Buddy-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Umbrella Buddy/Pods-Umbrella Buddy-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Umbrella Buddy/Pods-Umbrella Buddy-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

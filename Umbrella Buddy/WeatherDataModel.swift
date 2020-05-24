@@ -21,7 +21,7 @@ class WeatherDataModel {
 
         switch (condition) {
 
-            case 0...300 : 
+            case 0...300 :
                 return true
 
             case 301...500 :

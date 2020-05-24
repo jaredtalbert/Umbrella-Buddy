@@ -8,4 +8,5 @@ target 'Umbrella Buddy' do
   # Pods for Umbrella Buddy
     pod 'Alamofire'
     pod 'SwiftyJSON'
+    pod 'GoogleMaps'
 end
