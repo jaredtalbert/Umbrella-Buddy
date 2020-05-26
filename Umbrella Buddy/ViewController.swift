@@ -20,8 +20,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let constants = Constants()
     
     
-    let weather_url = "https://api.openweathermap.org/data/2.5/weather"
-    let app_id = "c47460de6ec07691f888b3f46c96bc4a"
+    let owm_url = "https://api.openweathermap.org/data/2.5/weather"
+    let owm_app_id = "c47460de6ec07691f888b3f46c96bc4a"
+    
+    // DarkSky api info
+    
+    let darkSkyBaseURL = "https://api.darksky.net/forecast/a2b2ac4bc8a8aa8490212ceff0d64169/"
+    
+    
     
     let locationManager = CLLocationManager()
     let weatherDataModel = WeatherDataModel()
@@ -30,67 +36,61 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
     }
     
-    // MARK: Networky Things
+    // MARK: Network Things
     
-    func getWeatherData(url: String, parameters: [String: String]) {
+    // TODO: exclude unwanted data
+    func getWeatherData(url: String, parameters: [String]) { // grab weather from Dark Sky API
         
-        Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
+        let darkSkyParametizedURL = "\(url)\(parameters[0]),\(parameters[1])"
+        
+        Alamofire.request(darkSkyParametizedURL, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON {
             response in
             if response.result.isSuccess {
-                print("DEBUG - Success! Got weather data")
                 
                 let weatherJSON: JSON = JSON(response.result.value!)
                 
                 self.updateWeatherData(json: weatherJSON)
                 
-            } else {
-                
-                print("DEBUG - Error: \(String(describing: response.result.error))")
-                self.cityNameLabel.text = "Connection Issues"
-                
+                print("DEBUG - Success! Got weather data from Dark Sky")
+//                print(weatherJSON)
             }
+            
         }
         
     }
     
+    // TODO: check within next 8 hours if rain will be present
+    // using the data received from weather API, update app info
     func updateWeatherData(json: JSON) {
-            if let tempResult = json["main"]["temp"].double {
-                
-                // convert temp to Fahrenheit and round
-                let tempInFahrenheit = round(tempResult * (9/5) - 459.67)
-                
-    //            weatherDataModel.temperature = Int(tempResult - 273.15)
-                weatherDataModel.city = json["name"].string!
-                weatherDataModel.condition = json["weather"][0]["id"].intValue
-                print("Weather Condition: \(weatherDataModel.condition)")
-//                weatherDataModel.weatherIconName = weatherDataModel.updateWeatherIcon(condition: weatherDataModel.condition)
-                weatherDataModel.umbrellaNeeded = weatherDataModel.updateConditon(condition: weatherDataModel.condition)
-                
-                updateUI()
-            } else {
-                print("DEBUG - Did not receive valid data from OWM API")
-                cityNameLabel.text = "Weather Unavailable"
-            }
+        
+        if let currentTemparature = json["currently"]["temperature"].double { // if we receive a valid temperature, we know we have valid data
+            print("DEBUG - Received valid data from Dark Sky")
+            
+            
+            // TODO: change this to check precipIntensity then use precipType
+            weatherDataModel.condition = json["currently"]["icon"].string!
+            
+            weatherDataModel.umbrellaNeeded = weatherDataModel.updateConditon(condition: weatherDataModel.condition) // realistically, probably could just condense this into the function
+            
+            updateUI()
+            
+        } else {
+            print("DEBUG - Did not receive valid data from Dark Sky")
+            cityNameLabel.text = "Weather Unavailable"
+            needUmbrellaLabel.text = "Weather Unavailable"
         }
+        
+    }
     
     func updateUI() {
         cityNameLabel.text = "\(weatherDataModel.city)"
-        
-        if (weatherDataModel.umbrellaNeeded) {
-//            needUmbrellaLabel.text = "You're probably going to need an umbrella today."
-            needUmbrellaLabel.text = weatherVocalization.giveVocalization(isUmbrellaNeeded: true)
-        } else {
-//            needUmbrellaLabel.text = "It doesn't look like you need an umbrella."
-            needUmbrellaLabel.text = weatherVocalization.giveVocalization(isUmbrellaNeeded: false)
-        }
+        needUmbrellaLabel.text = weatherVocalization.giveVocalization(isUmbrellaNeeded: weatherDataModel.umbrellaNeeded)
         
         print("DEBUG - UI Updated")
         
@@ -106,9 +106,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             let latitude = String(location.coordinate.latitude)
             let longitude = String(location.coordinate.longitude)
             
-            let locationParameters: [String: String] = ["lat": latitude, "lon": longitude, "appid": app_id]
+//            let locationParameters: [String: String] = ["lat": latitude, "lon": longitude, "appid": app_id]
             
-            getWeatherData(url: weather_url, parameters: locationParameters)
+            let locationParameters: [String] = [latitude, longitude]
+            
+            getWeatherData(url: darkSkyBaseURL, parameters: locationParameters)
         }
     }
     
