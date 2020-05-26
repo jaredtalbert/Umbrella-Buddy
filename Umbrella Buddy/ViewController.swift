@@ -111,17 +111,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             let locationParameters: [String] = [latitude, longitude]
             
             getWeatherData(url: darkSkyBaseURL, parameters: locationParameters)
+            getCityName(passedLocation: location)
         }
     }
     
-    
-    
-    //Write the didFailWithError method here:
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
         cityNameLabel.text = "Location Unavailable"
     }
+    
+    func getCityName(passedLocation: CLLocation) {
+    
+        let geocoder = CLGeocoder()
+        let location = passedLocation
+        
+        geocoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, _) -> Void in
+            placemarks?.forEach { (placemark) in
 
-
+                if let city = placemark.locality {
+                    self.weatherDataModel.city = city
+                }
+            }
+        })
+    }
 }
 
