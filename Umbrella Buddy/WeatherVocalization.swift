@@ -11,9 +11,9 @@ import GameKit
 
 class WeatherVocalization {
 
-    let umbrellaNeededResponses: [String] = ["It's... precipitation. Grab an umbrella.", "It looks like you might need an umbrella.", "Umbrella? Definitely."]
+    let umbrellaNeededResponses: [String] = ["It looks like you need an umbrella."] // ["It's... precipitation. Grab an umbrella.", "It looks like you might need an umbrella.", "Umbrella? Definitely."]
 
-    let umbrellaNotNeededResponses: [String] = ["It's dry as a bone. No umbrella needed.", "Don't forget your wallet, keys, and phone. Forget the umbrella, though.", "No rain in sight. Leave the umbrella behind."]
+    let umbrellaNotNeededResponses: [String] = ["You don\'t need an umbrella."] // ["It's dry as a bone. No umbrella needed.", "Don't forget your wallet, keys, and phone. Forget the umbrella, though.", "No rain in sight. Leave the umbrella behind."]
 
     func giveVocalization(isUmbrellaNeeded: Bool) -> String {
         if (isUmbrellaNeeded) {

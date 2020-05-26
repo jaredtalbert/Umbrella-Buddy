@@ -19,14 +19,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8i-8A-ERj" userLabel="cityNameLabel">
-                                <rect key="frame" x="167" y="89" width="80" height="338.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Umbrella Line" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbq-wi-YzY" userLabel="needUmbrellaLabel">
+                                <rect key="frame" x="154.5" y="437.5" width="105" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbq-wi-YzY" userLabel="needUmbrellaLabel">
-                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Umbrella Yes/No" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyQ-Zp-HTM">
+                                <rect key="frame" x="143" y="411.5" width="128" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8i-8A-ERj" userLabel="cityNameLabel">
+                                <rect key="frame" x="167" y="826.5" width="80" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -34,17 +40,19 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="s8i-8A-ERj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ERF-td-1i9"/>
+                            <constraint firstItem="Qbq-wi-YzY" firstAttribute="top" secondItem="yyQ-Zp-HTM" secondAttribute="bottom" constant="5" id="5gB-3Z-8hP"/>
                             <constraint firstItem="Qbq-wi-YzY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="IRq-WO-a7A"/>
-                            <constraint firstItem="Qbq-wi-YzY" firstAttribute="top" secondItem="s8i-8A-ERj" secondAttribute="bottom" constant="10" id="Xtd-5Q-RkV"/>
+                            <constraint firstItem="s8i-8A-ERj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XRn-4D-uom"/>
                             <constraint firstItem="Qbq-wi-YzY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z4P-UG-uq1"/>
-                            <constraint firstItem="s8i-8A-ERj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="hD5-o5-zZa"/>
+                            <constraint firstItem="yyQ-Zp-HTM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dBH-dE-1R3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="s8i-8A-ERj" secondAttribute="bottom" constant="15" id="dfP-qo-kJo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="cityNameLabel" destination="s8i-8A-ERj" id="dfG-Kc-hCH"/>
-                        <outlet property="needUmbrellaLabel" destination="Qbq-wi-YzY" id="TV9-Kj-0J8"/>
+                        <outlet property="needUmbrellaLabel" destination="yyQ-Zp-HTM" id="Acy-ki-C1t"/>
+                        <outlet property="needUmbrellaTaglineLabel" destination="Qbq-wi-YzY" id="TV9-Kj-0J8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
