@@ -15,6 +15,7 @@ import SwiftyJSON
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var needUmbrellaTaglineLabel: UILabel!
     @IBOutlet weak var needUmbrellaLabel: UILabel!
     
     let constants = Constants()
@@ -83,14 +84,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             print("DEBUG - Did not receive valid data from Dark Sky")
             cityNameLabel.text = "Weather Unavailable"
-            needUmbrellaLabel.text = "Weather Unavailable"
+            needUmbrellaTaglineLabel.text = "Weather Unavailable"
         }
         
     }
     
     func updateUI() {
         cityNameLabel.text = "\(weatherDataModel.city)"
-        needUmbrellaLabel.text = weatherVocalization.giveVocalization(isUmbrellaNeeded: weatherDataModel.umbrellaNeeded)
+        needUmbrellaTaglineLabel.text = weatherVocalization.giveVocalization(isUmbrellaNeeded: weatherDataModel.umbrellaNeeded)
+        
+        needUmbrellaLabel.text = weatherDataModel.umbrellaNeeded ? "YES" : "NO" // changes umbrella needed label text depending on status of umbrellaNeeded bool value
         
         print("DEBUG - UI Updated")
         
