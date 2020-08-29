@@ -41,11 +41,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        cityNameLabel.text = ""
+        needUmbrellaLabel.text = "Loading..."
+        needUmbrellaTaglineLabel.text = ""
     }
     
     // MARK: Network Things
-    
-    // TODO: exclude unwanted data
     func getWeatherData(url: String, parameters: [String]) { // grab weather from Dark Sky API
         
         let darkSkyParametizedURL = "\(url)\(parameters[0]),\(parameters[1])"
@@ -59,11 +61,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 self.updateWeatherData(json: weatherJSON)
                 
                 print("DEBUG - Success! Got weather data from Dark Sky")
-//                print(weatherJSON)
             }
-            
         }
-        
     }
     
     // TODO: check within next 8 hours if rain will be present
